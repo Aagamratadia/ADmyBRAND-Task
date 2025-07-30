@@ -112,7 +112,7 @@ const AnimatedNavbar = () => {
         </div>
 
         {/* Right: Hamburger Menu (Mobile) */}
-        <div className="md:hidden">
+        <div className="md:hidden ml-4 sm:ml-6">
           <button onClick={toggleMobileMenu} className="text-white">
             <Menu size={24} />
           </button>

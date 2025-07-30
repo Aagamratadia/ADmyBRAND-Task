@@ -46,10 +46,10 @@ const Hero = () => {
   };
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      className="relative min-h-screen h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-accent/10 p-0 m-0"
-      style={{marginTop: 0, paddingTop: 0}}
+      className="relative flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-accent/10 p-0 m-0 min-h-[80vh] h-auto md:min-h-screen md:h-screen"
+      style={{ marginTop: 0, paddingTop: 0 }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -75,8 +75,8 @@ const Hero = () => {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.1)_0%,_transparent_50%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_hsl(var(--secondary)/0.1)_0%,_transparent_50%)]" />
       
-      <div className="container relative z-10 px-6 py-24 pt-40">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container relative z-10 px-4 py-10 pt-24 md:px-6 md:py-24 md:pt-40">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Content */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
@@ -86,7 +86,7 @@ const Hero = () => {
           >
             {/* Headline */}
             <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
                 <span className="bg-gradient-to-r from-foreground via-primary to-secondary bg-clip-text text-transparent">
                   Transform Your Brand
                 </span>
@@ -105,7 +105,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto"
             >
               <Button variant="primary" size="lg" className="group">
                 Start Free Trial
@@ -123,7 +123,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="grid grid-cols-3 gap-8 pt-8 border-t border-border/50"
+              className="grid grid-cols-3 gap-4 pt-8 border-t border-border/50 text-center text-xs sm:text-sm md:text-base"
             >
               <div>
                 <div className="text-2xl font-bold text-primary">50K+</div>
@@ -145,13 +145,13 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="relative"
+            className="relative mt-10 md:mt-0 w-full max-w-[400px] sm:max-w-[500px] lg:max-w-full mx-auto"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-elegant">
               <img
                 src={heroImage.src}
                 alt="ADmyBRAND AI Suite Dashboard"
-                className="w-full h-auto object-cover"
+                className="w-full h-auto object-cover rounded-xl shadow-lg"
               />
               
               {/* Overlay Effects */}
