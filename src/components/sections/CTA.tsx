@@ -1,5 +1,6 @@
 'use client';
 import { motion } from "framer-motion";
+import DarkVeil from "@/components/DarkVeil";
 import {Button} from "@/components/ui/button";
 import { ArrowRight, Sparkles } from "lucide-react";
 
@@ -7,8 +8,9 @@ const CTA = () => {
   return (
     <section className="py-24 relative overflow-hidden">
       {/* Background Effects */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-secondary/10 to-primary/10" />
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_hsl(var(--primary)/0.2)_0%,_transparent_70%)]" />
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+        <DarkVeil />
+      </div>
       
       <div className="container relative z-10 px-6">
         <motion.div

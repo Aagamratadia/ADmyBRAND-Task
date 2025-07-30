@@ -5,6 +5,8 @@ import CTA from "@/components/sections/CTA";
 import Footer from "@/components/sections/Footer";
 import ContactSection from "@/components/sections/ContactSection";
 import { ScrollLinkedVerticalLine } from "@/components/ui/ScrollLinkedVerticalLine";
+import TestimonialsCarousel from "@/components/sections/TestimonialsCarousel";
+import FaqSection from "@/components/sections/FaqSection";
 
 export default function Home() {
   return (
@@ -15,6 +17,8 @@ export default function Home() {
         <div className="my-1 md:my-0"><Features /></div>
         <div className="my-1 md:my-0"><Pricing /></div>
         <div className="my-1 md:my-0"><CTA /></div>
+        <div className="my-1 md:my-0"><TestimonialsCarousel /></div>
+        <div className="my-1 md:my-0"><FaqSection /></div>
         <Footer />
       </main>
     </>
