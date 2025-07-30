@@ -1,10 +1,11 @@
 "use client";
+
 import InteractivePricingSection from "@/components/sections/InteractivePricingSection";
 import DemoVideoModal from "@/components/ui/DemoVideoModal";
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, Suspense } from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 
-export default function PricingDemoPage() {
+function PricingDemoPageInner() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -31,5 +32,13 @@ export default function PricingDemoPage() {
       <DemoVideoModal isOpen={isModalOpen} onClose={handleClose} />
       <InteractivePricingSection />
     </main>
+  );
+}
+
+export default function PricingDemoPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PricingDemoPageInner />
+    </Suspense>
   );
 }
