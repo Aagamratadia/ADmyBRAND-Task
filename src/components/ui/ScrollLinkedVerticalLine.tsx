@@ -4,7 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Register GSAP plugin safely
-if (typeof window !== "undefined" && gsap.core && !gsap.core.globals().ScrollTrigger) {
+if (typeof window !== "undefined" && !gsap.utils.toArray && !(window as any).ScrollTrigger) {
   gsap.registerPlugin(ScrollTrigger);
 }
 
