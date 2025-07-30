@@ -1,0 +1,2 @@
+gray-matter
+next-mdx-remote

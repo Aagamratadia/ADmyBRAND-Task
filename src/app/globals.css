@@ -1,26 +1,136 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Infinite Logo Marquee Animation */
+@keyframes infinite-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-infinite-marquee {
+  animation: infinite-marquee linear infinite;
 }
+
+
+/* Premium Dark Design System for ADmyBRAND AI Suite
+All colors are HSL for maximum flexibility and theming capability.
+*/
+
+@layer base {
+  :root {
+    /* Premium Dark Navy Base */
+    --background: 217 33% 6%;
+    --foreground: 0 0% 100%;
+
+    /* Card & Surface Colors */
+    --card: 217 33% 8%;
+    --card-foreground: 0 0% 100%;
+
+    /* Interactive Elements */
+    --popover: 217 33% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Electric Purple Primary */
+    --primary: 271 81% 56%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 271 81% 70%;
+
+    /* Cool Blue Secondary */
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted Elements */
+    --muted: 217 33% 12%;
+    --muted-foreground: 217 10% 64%;
+
+    /* Accent Colors */
+    --accent: 217 33% 15%;
+    --accent-foreground: 0 0% 100%;
+
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    /* Borders & Inputs */
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 271 81% 56%;
+
+    /* Border Radius */
+    --radius: 0.75rem;
+
+    /* Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--primary-glow)));
+    --gradient-secondary: linear-gradient(135deg, hsl(var(--secondary)), hsl(var(--primary)));
+    --gradient-surface: linear-gradient(135deg, hsl(var(--card)), hsl(var(--accent)));
+
+    /* Shadows & Effects */
+    --shadow-primary: 0 25px 50px -12px hsl(var(--primary) / 0.25);
+    --shadow-secondary: 0 25px 50px -12px hsl(var(--secondary) / 0.25);
+    --shadow-elegant: 0 10px 30px -10px hsl(217 33% 4% / 0.5);
+    --glow-primary: 0 0 40px hsl(var(--primary) / 0.4);
+    --glow-secondary: 0 0 40px hsl(var(--secondary) / 0.4);
+
+    /* Sidebar (inherited for compatibility) */
+    --sidebar-background: 217 33% 8%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 271 81% 56%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 12%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 217 33% 18%;
+    --sidebar-ring: 271 81% 56%;
+  }
+
+  /* Force dark mode - this is a dark-first design */
+  .dark {
+    --background: 217 33% 6%;
+    --foreground: 0 0% 100%;
+    --card: 217 33% 8%;
+    --card-foreground: 0 0% 100%;
+    --popover: 217 33% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 271 81% 56%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 91% 60%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 217 33% 12%;
+    --muted-foreground: 217 10% 64%;
+    --accent: 217 33% 15%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 33% 18%;
+    --input: 217 33% 18%;
+    --ring: 271 81% 56%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply dark;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-family: 'Inter', system-ui, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+}
+
