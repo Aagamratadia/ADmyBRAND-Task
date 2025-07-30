@@ -4,9 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Register GSAP plugin safely
-if (typeof window !== "undefined" && !gsap.utils.toArray && !(window as any).ScrollTrigger) {
-  gsap.registerPlugin(ScrollTrigger);
-}
+gsap.registerPlugin(ScrollTrigger);
 
 interface ScrollLinkedVerticalLineProps {
   /**
